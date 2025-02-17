@@ -315,18 +315,19 @@ body {
 
 .titulo-principal {
     font-family: 'Dancing Script', cursive;
-    font-size: 6rem;
+    font-size: 4rem; /* Tamaño reducido para móviles */
     margin: 0;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 .cafe-color {
     color: #6f4e37; /* Color café */
 }
 
 .subtitulo {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 1.5rem; /* Tamaño reducido para móviles */
     margin: 10px 0 0;
     color: #fff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -334,43 +335,44 @@ body {
 
 /* Sección "Quiénes Somos" */
 .quienes-somos {
-    padding: 50px;
+    padding: 20px; /* Padding reducido para móviles */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    margin: 20px;
+    margin: 10px; /* Margen reducido para móviles */
     border-radius: 15px;
 }
 
 .quienes-somos .contenido {
     display: flex;
+    flex-direction: column; /* Cambia a columna en móviles */
     align-items: center;
-    justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .quienes-somos p {
-    width: 50%;
+    width: 100%; /* Ocupa todo el ancho en móviles */
     text-align: justify;
 }
 
 .quienes-somos img {
-    width: 300px;
+    width: 100%; /* Imagen ocupa todo el ancho en móviles */
+    max-width: 300px; /* Tamaño máximo */
     border-radius: 10px;
 }
 
 /* Sección Productos */
 .productos {
-    padding: 50px;
+    padding: 20px; /* Padding reducido para móviles */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    margin: 20px;
+    margin: 10px; /* Margen reducido para móviles */
     border-radius: 15px;
 }
 
 .grid-productos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    gap: 10px; /* Espacio reducido entre productos */
     justify-items: center;
 }
 
@@ -379,22 +381,25 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 10px; /* Padding reducido para móviles */
     text-align: center;
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
 .producto img {
-    width: 150px;
+    width: 100%; /* Imagen ocupa todo el ancho */
+    max-width: 150px; /* Tamaño máximo */
     border-radius: 10px;
 }
 
 button {
     background-color: green;
     color: white;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Padding reducido para móviles */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px; /* Tamaño de fuente reducido */
 }
 
 button:hover {
@@ -404,41 +409,18 @@ button:hover {
 /* Botones flotantes */
 .botones-fijos {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 10px; /* Posición ajustada para móviles */
+    right: 10px; /* Posición ajustada para móviles */
     display: flex;
-    gap: 10px;
+    gap: 5px; /* Espacio reducido entre botones */
     z-index: 1000;
 }
 
 .boton-rojo, .boton-verde, .boton-editar {
-    padding: 10px 15px;
+    padding: 8px 12px; /* Padding reducido para móviles */
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-.boton-rojo {
-    background-color: red;
-    color: white;
-    border: none;
-}
-
-.boton-verde {
-    background-color: #a6ff4d;
-    color: black;
-    border: none;
-}
-
-.boton-editar {
-    background-color: #ffcc00;
-    color: black;
-    border: none;
-    margin-right: 10px;
-}
-
-.boton-editar:hover {
-    background-color: #e6b800;
+    font-size: 14px; /* Tamaño de fuente reducido */
 }
 
 /* Carrito modal */
@@ -450,11 +432,12 @@ button:hover {
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(15px);
-    padding: 20px;
+    padding: 15px; /* Padding reducido para móviles */
     border-radius: 10px;
     text-align: center;
     z-index: 2000;
-    width: 300px;
+    width: 90%; /* Ancho reducido para móviles */
+    max-width: 300px; /* Ancho máximo */
 }
 
 .carrito-modal ul {
@@ -466,5 +449,34 @@ button:hover {
     margin: 10px 0;
 }
 
+/* Tabla nutricional */
+.tabla-nutricional {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    overflow-x: auto; /* Permite desplazamiento horizontal */
+    margin: 20px 0;
+    padding: 10px; /* Padding reducido para móviles */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
 
+.tabla-nutricional table {
+    width: 100%;
+    min-width: 300px; /* Ancho mínimo para la tabla */
+}
+
+/* Media queries para móviles */
+@media (max-width: 480px) {
+    .grid-productos {
+        grid-template-columns: 1fr; /* 1 columna en móviles muy pequeños */
+    }
+
+    .titulo-principal {
+        font-size: 3rem; /* Tamaño reducido para móviles muy pequeños */
+    }
+
+    .subtitulo {
+        font-size: 1.2rem; /* Tamaño reducido para móviles muy pequeños */
+    }
+}
 
